@@ -1,0 +1,129 @@
+/* Universal Selector */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    color:#333;
+    line-height:1.6;
+    margin:20px;
+}
+
+nav{
+    background:#333;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+}
+
+#welcomeBanner{
+    background:linear-gradient(to right,#007bff,#00d4ff);
+    color:white;
+    padding:20px;
+    margin-top:20px;
+}
+
+.highlight{
+    background:yellow;
+    color:black;
+    padding:5px;
+}
+
+section{
+    background:white;
+    padding:20px;
+    margin-top:30px;
+    border-radius:10px;
+}
+
+h2{
+    color:#004080;
+    margin-bottom:15px;
+}
+
+.gallery{
+    width:200px;
+    height:150px;
+    border:2px solid black;
+}
+
+table{
+    margin-top:20px;
+    border-collapse:collapse;
+}
+
+td{
+    padding:10px;
+}
+
+form{
+    background:white;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+button{
+    padding:10px 20px;
+    background:green;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:darkgreen;
+}
+
+.videoPlaceholder{
+    border:2px dashed #007bff;
+    padding:30px;
+    text-align:center;
+    color:#004080;
+    background:#eef7ff;
+    margin-top:10px;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+}
+
+.newsArticle{
+    column-count:2;
+    column-gap:30px;
+    column-rule:1px solid gray;
+}
+
+@media screen and (max-width:768px){
+
+    nav{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .gallery{
+        width:100%;
+        height:auto;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+}

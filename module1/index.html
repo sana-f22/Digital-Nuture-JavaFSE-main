@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#welcome">Community Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#welcome">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#preferences">Preferences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bootstrp.html">Bootstrap Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="welcome" class="bg-primary text-white py-5">
+        <div class="container">
+            <h1 class="display-5">Local Community Event Portal</h1>
+            <p class="lead">Find events, register, save preferences, and stay connected with your neighborhood.</p>
+        </div>
+    </section>
+
+    <section id="events">
+        <h2>Register for an Event</h2>
+        <form onsubmit="event.preventDefault(); showRegistration();">
+            <label>Name</label>
+            <input id="name" type="text" placeholder="Your name" required>
+
+            <label>Phone Number</label>
+            <input id="phone" type="tel" placeholder="10-digit phone" onblur="validatePhone()">
+
+            <label>Choose Event</label>
+            <select id="eventType">
+                <option>Community Clean-up</option>
+                <option>Neighborhood Fair</option>
+                <option>Health Workshop</option>
+            </select>
+
+            <label>Event Fee</label>
+            <input id="eventFee" type="range" min="0" max="500" value="150" oninput="showFee()">
+            <div id="feeDisplay">Event Fee: ₹150</div>
+
+            <button type="submit">Register</button>
+            <input id="outputMsg" readonly placeholder="Registration status will appear here">
+        </form>
+    </section>
+
+    <section id="gallery">
+        <h2>Event Gallery</h2>
+        <svg class="gallery" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" onclick="enlargeImage(this)">
+            <rect width="200" height="150" fill="#007bff"/>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16">Event Image</text>
+        </svg>
+        <p>Click the illustration to enlarge it.</p>
+    </section>
+
+    <section id="feedback">
+        <h2>Send Feedback</h2>
+        <textarea id="feedback" rows="4" placeholder="Write your feedback" oninput="countCharacters()"></textarea>
+        <div>Characters: <span id="charCount">0</span></div>
+        <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+    </section>
+
+    <section id="videoSection">
+        <h2>Event Preview</h2>
+        <div class="videoPlaceholder">Preview content coming soon. This placeholder avoids external video dependencies.</div>
+        <div id="videoStatus">Video preview will be available once the event launches.</div>
+    </section>
+
+    <section id="preferences" class="container mt-5">
+        <h2>Preferences</h2>
+        <label class="form-label">Preferred Event</label>
+        <select id="preferredEvent" class="form-select mb-3">
+            <option>Community Clean-up</option>
+            <option>Neighborhood Fair</option>
+            <option>Health Workshop</option>
+        </select>
+        <button type="button" class="btn btn-primary me-2" onclick="savePreference()">Save Preference</button>
+        <button type="button" class="btn btn-secondary" onclick="clearPreference()">Clear Preference</button>
+    </section>
+
+    <section id="locationSection" class="container mt-5">
+        <h2>Find Your Location</h2>
+        <button type="button" onclick="findLocation()">Get Current Location</button>
+        <div id="location"></div>
+    </section>
+
+    <section id="debugSection">
+        <h2>Debug Counter</h2>
+        <button type="button" onclick="increment()">Increment Counter</button>
+        <div id="debugResult">0</div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0">© 2026 Local Community Event Portal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js" defer></script>
+</body>
+
+</html>
